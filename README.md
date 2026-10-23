@@ -1,60 +1,68 @@
 # IKEA BILRESA – All-in-One Blueprint (Buttons + Scrollwheel)
 
-Dieser Blueprint ermöglicht die vollständige Nutzung des **IKEA BILRESA Scroll Wheel Tasters**
-in **Home Assistant** über **Matter / event.* Entities**.
+This blueprint enables full use of the **IKEA BILRESA scroll wheel remote**
+in **Home Assistant** via **Matter / event.* entities**.
 
-Er kombiniert **alle Funktionen in einem einzigen Blueprint**:
-- 3 Buttons (Button 2 & 3 optional)
-- Scrollwheel rechts / links **pro Button**
-- Mehrfachklicks
-- Halten zum Dimmen
-- Keine Cover-Funktionen (bewusst weggelassen)
-
----
-
-## ✨ Funktionen
-
-### Buttons (Taste 1–3)
-- **1× Klick** (`multi_press_1`)
-- **2× Klick** (`multi_press_2`)
-- **3× Klick** (`multi_press_3`)
-- **Halten / Loslassen**
-  - `long_press` → Dimmen
-  - `long_release` → Stop
-
-Button **2 und 3 sind optional**.  
-Wenn keine Event-Entity ausgewählt wird, werden sie einfach ignoriert.
+It combines **all features in a single blueprint**:
+- 3 buttons (Button 2 & 3 optional)
+- Scrollwheel right / left **per button**
+- Multi-clicks
+- Hold to dim
+- No cover functions (intentionally left out)
 
 ---
 
-### Scrollwheel (Drehrad)
-Für **jeden Button separat** konfigurierbar:
+## ✨ Features
 
-- Rechtsdrehung → Helligkeit erhöhen oder reduzieren
-- Linksdrehung → Helligkeit erhöhen oder reduzieren
-- Berücksichtigt `totalNumberOfPressesCounted`
-- Eigene Schrittweite pro Richtung
-- Eigene Ziellampe pro Button möglich
+### Buttons (Button 1–3)
+- **1× click** (`multi_press_1`)
+- **2× click** (`multi_press_2`)
+- **3× click** (`multi_press_3`)
+- **Hold / Release**
+  - `long_press` → dim
+  - `long_release` → stop
 
-Button 2 & 3 Scrollwheel-Entities sind ebenfalls **optional**.
+Buttons **2 and 3 are optional**.  
+If no event entity is selected, they are simply ignored.
 
 ---
 
-## 🧩 Voraussetzungen
+### Scrollwheel
+Configurable **separately for each button**:
+
+- Right rotation → increase or decrease brightness
+- Left rotation → increase or decrease brightness
+- Takes `totalNumberOfPressesCounted` into account
+- Separate step size per direction
+- Separate target light per button possible
+
+The Button 2 & 3 scrollwheel entities are also **optional**.
+
+---
+
+## 🧩 Requirements
 
 - **Home Assistant Core ≥ 2024.x**
-- IKEA **BILRESA Scroll Wheel Taster**
-- Integration, die **`event.*` Entities** erzeugt (z. B. Matter)
-- Lampe mit Dimmfunktion (`light` Domain)
+- IKEA **BILRESA scroll wheel remote**
+- Integration that creates **`event.*` entities** (e.g. Matter)
+- Dimmable light (`light` domain)
 
-⚠️ Dieser Blueprint ist **nicht** für ZHA-/Zigbee-Action-Sensoren gedacht,  
-sondern explizit für **event-basierte Matter-Entities**.
+⚠️ This blueprint is **not** intended for ZHA/Zigbee action sensors,  
+but explicitly for **event-based Matter entities**.
 
 ---
 
 ## 📥 Installation
 
-### Direktimport (empfohlen)
-Klicke auf diesen Link:
+### Direct import (recommended)
+Click this link:
 
-https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https://raw.githubusercontent.com/tomv79/ikea-bilresa-blueprint/main/blueprints/automation/ikea_bilresa_all_in_one.yaml
+https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https://raw.githubusercontent.com/sharkovich/ikea-bilresa-blueprint/main/blueprints/automation/ikea_bilresa_all_in_one.yaml
+
+---
+
+## 🙏 Credits
+
+The original blueprint was created by [tomv79](https://github.com/tomv79) –
+see [tomv79/ikea-bilresa-blueprint](https://github.com/tomv79/ikea-bilresa-blueprint).  
+This repository is an English translation of it.
